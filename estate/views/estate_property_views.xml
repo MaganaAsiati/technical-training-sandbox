@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="estate_model_action" model="ir.actions.act_window">
+        <field name="name">Estate Action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_estate_tree" model="ir.ui.view">
+        <field name="name">estate.property.tree</field>
+        <field name="model">estate.property</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <tree string="Estate property" sample="1"> 
+                <field name="name" string="Estate Name" />
+                <field name="date_availability" string="Date aval"/>
+                <field name="selling_price" string="Selling price"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_estate_form" model="ir.ui.view">
+        <field name="name">estate.property.form</field>
+        <field name="model">estate.property</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <form string="Estate property" sample="1"> 
+                <field name="name" string="Estate Name" />
+                <field name="date_availability" string="Date aval"/>
+                <field name="selling_price" string="Selling price"/>
+            </form>
+        </field>
+    </record>
+
+</odoo>
