@@ -1,36 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="estate_model_action" model="ir.actions.act_window">
-        <field name="name">Estate Action</field>
+        <field name="name"> Properties </field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">estate.property</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="view_estate_tree" model="ir.ui.view">
+     <record id="view_estate_tree" model="ir.ui.view">
         <field name="name">estate.property.tree</field>
         <field name="model">estate.property</field>
         <field name="priority">2</field>
         <field name="arch" type="xml">
             <tree string="Estate property" sample="1"> 
-                <field name="name" string="Estate Name" />
-                <field name="date_availability" string="Date aval"/>
+                <field name="name" string="Title" />
+                <field name="postcode" string="PostCode"/>
+                <field name="bedrooms" string="Bedrooms"/> 
+                <field name="living_area" string="Living Area(sqm)"/>
+                <field name="expected_price" string="Expected Price"/>
                 <field name="selling_price" string="Selling price"/>
+                <field name="date_availability" string="Available Form"/>
+                
             </tree>
         </field>
     </record>
 
     <record id="view_estate_form" model="ir.ui.view">
         <field name="name">estate.property.form</field>
-        <field name="model">estate.property</field>
-        <field name="priority">2</field>
+        <field name="model">estate.property</field> 
         <field name="arch" type="xml">
-            <form string="Estate property" sample="1"> 
-                <field name="name" string="Estate Name" />
-                <field name="date_availability" string="Date aval"/>
-                <field name="selling_price" string="Selling price"/>
+          <form>
+                <group>
+                    <field name="name" required="1"/>
+                    <field name="description" string="Benjskksk"/>
+                    <field name="postcode"/>
+                    <field name="date_availability"/>
+                    <field name="expected_price" required="1"/>
+                    <field name="selling_price" readonly="1"/>
+                    <field name="bedrooms" default="2"/>
+                    <field name="living_area"/>
+                    <field name="facades"/>
+                    <field name="garage"/>
+                    <field name="active"/>
+                    <field name="garden_area"/>
+                    <field name="garden_orientation"/>
+                    <field name="state"/>
+                </group>
             </form>
         </field>
-    </record>
+    </record> 
+
 
 </odoo>
